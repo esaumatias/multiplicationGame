@@ -1,5 +1,4 @@
 import React from 'react';
-import AppContext from '../../context/AppContex';
 import Placar from '../Placar/Placar';
 import './Header.css';
 
