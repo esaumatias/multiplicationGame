@@ -34,7 +34,7 @@ function Login() {
           </Form.Group>
           <Form.Control
             variant="primary"
-            type="submit"
+            type="button"
             onClick={setUser}
             className="inputButton"
             value="START"
