@@ -22,8 +22,12 @@ function NumberGenerator() {
     userName } = useContext(AppContext);
 
    useEffect(() => {
-    getRandom();
-  }, []);
+    const one = parseInt(Math.random() * 10);
+    const two = parseInt(Math.random() * 10);
+    setNumberOne(one);
+    setNumberTwo(two);
+    setMultiply(one * two);
+  }, [setMultiply, setNumberTwo, setNumberOne]);
 
   function getRandom() {
     const one = parseInt(Math.random() * 10);
