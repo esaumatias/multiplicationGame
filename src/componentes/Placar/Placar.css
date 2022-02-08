@@ -1,0 +1,45 @@
+.placar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  font-weight: 600;
+}
+
+.placar .acertos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30%;
+  height: 60px;
+  background-color: rgb(42, 143, 42);
+  font-size: 30px;
+  color: white;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.placar .erros {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30%;
+  height: 60px;
+  background-color: rgb(204, 10, 10);
+  font-size: 30px;
+  color: white;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.placarNameAcertos,
+.placarNameError {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40%;
+  height: 40px;
+  background-color: rgb(255, 255, 255);
+  font-size: 100%;
+  color: rgb(0, 0, 0);
+}

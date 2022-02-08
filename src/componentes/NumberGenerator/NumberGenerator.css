@@ -1,0 +1,77 @@
+.containerGame {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background: rgb(86,192,196);
+  background: linear-gradient(90deg, rgba(86,192,196,1) 19%, rgba(73,57,124,1) 85%);
+  color: #fff;
+}
+
+.titleNumber {
+  width: 200px;
+  border: none;
+  margin: 10px;
+  background-color: transparent;
+  color: #fff;
+}
+
+.text-center2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(255, 255, 255);
+}
+
+.text-center2 {
+  display: flex;
+  background-color: white;
+  justify-content: center;
+  align-items: center;
+  color: rgb(3, 3, 3);
+  margin-bottom: 10px;
+  font-size: bold;
+}
+
+.inputResposta {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.greem {
+  color: rgb(14, 243, 14);
+}
+
+.red {
+  color: rgb(136, 6, 6);
+}
+
+.inputButton {
+  background-color: rgb(2, 34, 136);
+  border: none;
+  color: white;
+}
+
+.inputButton:hover {
+  background-color: rgb(10, 49, 177);
+}
+
+.textResul {
+  margin-top: 10px;
+}
+
+.containerResults {
+  max-width: 200px;
+  height: 50px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.containerGeral {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

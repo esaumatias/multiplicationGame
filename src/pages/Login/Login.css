@@ -1,0 +1,20 @@
+.containerLogin {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  color: #fff;
+}
+
+.inputButton {
+  background-color: rgb(2, 34, 136);
+  border: none;
+  color: white;
+}
+
+.inputButton:hover {
+  background-color: rgb(10, 49, 177);
+}
