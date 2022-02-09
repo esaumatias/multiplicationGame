@@ -5,18 +5,26 @@ import AppContext from '../../context/AppContex';
 import './Login.css';
 
 function Login() {
-  const { setUserName } = useContext(AppContext);
+  const { setUserName, setDificulty, setAcertos, setErros } = useContext(AppContext);
   const [name, setName] = useState('');
   const history = useHistory();
 
   function handleName({target}) {
     const { value } = target;
+    console.log(value.name);
     setName(value);
   }
 
+  function handleDificulty({target}) {
+    const { value } = target;
+    setDificulty(value);
+  }
+
   function setUser() {
-    setUserName(name);
     history.push('/game');
+    setUserName(name);
+    setAcertos(0);
+    setErros(0);
   }
 
   return(
@@ -31,12 +39,18 @@ function Login() {
               onChange={handleName}
               className="inputResposta"
             />
+            <Form.Select onChange={handleDificulty} className="selectLogin">
+              <option value="facil" select>facil</option>
+              <option value="médio">médio</option>
+              <option value="dificil">dificil</option>
+            </Form.Select>
+
           </Form.Group>
           <Form.Control
             variant="primary"
             type="button"
             onClick={setUser}
-            className="inputButton"
+            className="inputButtonLogin"
             value="START"
           />
         </Col>

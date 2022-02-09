@@ -1,11 +1,19 @@
 import React from "react";
-import NumberGenerator from '../NumberGenerator/NumberGenerator';
+import { Row, Col } from 'react-bootstrap';
 import './Multiply.css';
-function Multiply() {
+function Multiply(props) {
+  const { one, two } = props;
   return (
     <div className="containerMultiply">
-      <h1>GAME TABUADA</h1>
-      <NumberGenerator />
+      <form className="d-grid gap-2 textResul">
+        <h3>Resolva a multiplicação:</h3>
+        <Row className="text-center">
+          <Col xs as="h2">{one}</Col>
+          <Col xs as="h5">X</Col>
+          <Col xs as="h2">{two}</Col>
+        </Row>
+      </form>
+
     </div>
   );
 }

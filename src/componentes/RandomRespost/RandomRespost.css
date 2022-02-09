@@ -1,0 +1,10 @@
+.containerQuestions {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.buttonQuestions {
+  width: 22%;
+  background-color: rgb(138, 139, 138);
+}

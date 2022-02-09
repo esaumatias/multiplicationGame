@@ -1,15 +1,17 @@
-import React, { useContext } from 'react';
-import AppContext from '../../context/AppContex';
+import React from 'react';
 import './Placar.css';
-function Placar() {
-  const { erros, acertos } = useContext(AppContext);
-
+function Placar(props) {
+  const { one, two } = props;
+  
   return (
+    <div className="containerHeader">
+    <h1>GAME TABUADA</h1>
     <div className="placar">
       <div className="placarNameAcertos">Acertos</div>
-      <div className="acertos">{acertos}</div>
-      <div className="erros">{erros}</div>
+      <div className="acertos">{one}</div>
+      <div className="erros">{two}</div>
       <div className="placarNameError">Erros</div>
+    </div>
     </div>
   );
 }

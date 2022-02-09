@@ -9,12 +9,16 @@ h1 {
   color: #fff;
 }
 
-.inputButton {
+.inputButtonLogin {
   background-color: rgb(2, 34, 136);
   border: none;
   color: white;
 }
 
-.inputButton:hover {
+.inputButtonLogin:hover {
   background-color: rgb(10, 49, 177);
+}
+
+.selectLogin {
+  margin-bottom: 10px;
 }

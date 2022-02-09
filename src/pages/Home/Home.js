@@ -1,10 +1,16 @@
 import React from 'react';
-import Multiply from '../../componentes/Multiply/Multiply';
+import NumberGenerator from '../../componentes/NumberGenerator/NumberGenerator';
+import './Home.css';
 
 function Home() {
   return (
-    <div className="App">
-      <Multiply />
+    <div className="containerHome">
+      <div className="containerTop">
+      </div>
+
+      <div className="homeCenter">
+        <NumberGenerator />
+      </div>
     </div>
   );
 }

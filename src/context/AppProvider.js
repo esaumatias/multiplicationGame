@@ -3,9 +3,12 @@ import AppContext from './AppContex';
 
 const AppProvider = ({ children }) => {
   const [multiply, setMultiply] = useState('');
-  const [userName, setUserName] = useState('');
-  const [acertos, setAcertos] = useState(0);
-  const [erros, setErros] = useState(0);
+  const [userName, setUserName] = useState('user');
+  const [dificulty, setDificulty] = useState('facil');
+  const [numberOne, setNumberOne] = useState(0);
+  const [numberTwo, setNumberTwo] = useState(0);
+  const [result, setResult] = useState('');
+  const [disableButton, setDisableButton] = useState(false);
 
   return (
     <AppContext.Provider
@@ -14,10 +17,16 @@ const AppProvider = ({ children }) => {
         setMultiply,
         userName,
         setUserName,
-        acertos,
-        setAcertos,
-        erros,
-        setErros,
+        dificulty,
+        setDificulty,
+        numberOne,
+        setNumberOne,
+        numberTwo,
+        setNumberTwo,
+        result,
+        setResult,
+        disableButton,
+        setDisableButton,
       } }
     >
       {children}

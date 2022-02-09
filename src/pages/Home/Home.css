@@ -1,0 +1,17 @@
+.containerHome {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100vw; 
+  height: 100vh;
+  background: linear-gradient(90deg, rgba(86,192,196,1) 19%, rgba(73,57,124,1) 85%);
+  text-align: center;
+  padding-top: 25px;
+}
+
+.containerTop {
+  position: fixed;
+  top: 20px;
+  left: 0;
+  right: 0;
+}
