@@ -66,7 +66,7 @@ function RandomRespost(props) {
       {shuffleArray().map((value, index) => (
         <Button
           variant="primary"
-          size="x"
+          size="sm"
           className="buttonQuestions"
           onClick={handleRepost}
           key={index}
