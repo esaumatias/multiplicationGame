@@ -8,6 +8,13 @@
 .buttonQuestions {
   width: 48%;
   height: 50%;
-  background-color: rgb(138, 139, 138);
   margin-bottom: 8px;
+}
+
+.green2 {
+  background-color: rgb(14, 243, 14);
+}
+
+.red2 {
+  background-color: rgb(136, 6, 6);
 }

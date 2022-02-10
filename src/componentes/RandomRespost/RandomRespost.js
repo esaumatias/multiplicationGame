@@ -7,6 +7,7 @@ import './RandomRespost.css';
 function RandomRespost() {
   const [acertos, setAcertos] = useState(0);
   const [erros, setErros] = useState(0);
+  const [classe, setClasse] = useState('');
   const {  
       multiply, 
       dificulty, 
@@ -75,7 +76,7 @@ function RandomRespost() {
       <Placar one={acertos} two={erros} />
       {randomQuestions().map((value, index) => (
         <Button
-          variant="primary"
+          variant={disableButton ? (value === multiply ? 'success' : 'danger') : 'secondary'}
           size="lg"
           className="buttonQuestions"
           onClick={handleRepost}
