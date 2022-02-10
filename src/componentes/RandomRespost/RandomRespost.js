@@ -4,9 +4,7 @@ import { Button } from 'react-bootstrap';
 import Placar from '../Placar/Placar';
 import './RandomRespost.css';
 
-function RandomRespost(props) {
-  const { alternativas } = props;
-
+function RandomRespost() {
   const [acertos, setAcertos] = useState(0);
   const [erros, setErros] = useState(0);
   const {  
@@ -59,17 +57,26 @@ function RandomRespost(props) {
     }
   }
 
-  function shuffleArray(){
-    return alternativas.sort(()=> Math.random() - 0.5);
+  function randomQuestions() {
+    if (dificulty === 'facil') {
+      const array = [getRandomInt(0, 100), getRandomInt(0, 100), getRandomInt(0, 100), multiply];
+      return array.sort(()=> Math.random() - 0.5);;
+    } else if (dificulty === 'médio') {
+      const array = [getRandomInt(40, 1000), getRandomInt(40, 1000), getRandomInt(40, 1000), multiply];
+      return array.sort(()=> Math.random() - 0.5);;
+    } else if (dificulty === 'dificil') {
+      const array = [getRandomInt(24, 1300), getRandomInt(24, 1300), getRandomInt(24, 1300), multiply];
+      return array.sort(()=> Math.random() - 0.5);;
   }
+}
 
   return (
     <div className="containerQuestions">
       <Placar one={acertos} two={erros} />
-      {shuffleArray().map((value, index) => (
+      {randomQuestions().map((value, index) => (
         <Button
           variant="primary"
-          size="sm"
+          size="lg"
           className="buttonQuestions"
           onClick={handleRepost}
           key={index}
