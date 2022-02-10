@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import AppContext from '../../context/AppContex';
 import { Button } from 'react-bootstrap';
 import Placar from '../Placar/Placar';

@@ -8,12 +8,10 @@ import './Feedback.css';
 function Feedback() {
   const history = useHistory();
   const { 
-    userName,
     setDificulty,
     setMultiply,
     setDisableButton,
     setResult,
-    multiply,
     acertos,
     setPage } = useContext(AppContext);
 
