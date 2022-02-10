@@ -1,7 +1,7 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import AppContext from '../../context/AppContex';
-import { Form, Card, Button } from 'react-bootstrap';
+import { Card, Button } from 'react-bootstrap';
 import Multiply from '../Multiply/Multiply';
 import RandomRespost from '../RandomRespost/RandomRespost';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -10,33 +10,26 @@ import './NumberGenerator.css';
 function NumberGenerator() {
   const history = useHistory();
   const [array, setARray] = useState([]);
-  const [multiply, setMultiply] = useState('');
   const [numberOne, setNumberOne] = useState(0);
   const [numberTwo, setNumberTwo] = useState(0);
 
   const { 
     userName,
     dificulty,
-    setDificulty,
     result,
     disableButton,
     setDisableButton,
-    setResult, } = useContext(AppContext);
+    setResult,
+    setMultiply,
+    page,
+    setPage } = useContext(AppContext);
 
-  useEffect(randomQuestions, [dificulty])
+  useEffect(randomQuestions, [dificulty, setMultiply])
 
   function getRandomInt(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min)) + min;
-  }
-
-  function logOff() {
-    setMultiply('');
-    setDificulty('facil')
-    setDisableButton(false);
-    setResult('');
-    history.push('/');
   }
 
   function randomQuestions() {
@@ -71,16 +64,21 @@ function NumberGenerator() {
     setDisableButton(false);
     setResult('');
     randomQuestions();
+    setPage(page + 1)
+
+    if (page === 10) {
+      history.push('/feedback');
+    }
   }
 
   return (
     <Card className="containerGame">
+      <h2>{`${page}/10`}</h2>
       <Multiply one={numberOne} two={numberTwo} />
 
       <form className="d-grid gap-2">
         <div className="containerGeral">
-
-          <RandomRespost alternativas={array} resposta={multiply} />
+          <RandomRespost alternativas={array} />
 
           <h2 className="titleResult">{`${userName}, sua resposta está:`}</h2>
           <div className="containerResults">
@@ -89,13 +87,6 @@ function NumberGenerator() {
           </div>
         </div>
         <Button onClick={nextQuestions} disabled={!disableButton}>Proxima Questão</Button>
-        <Form.Control
-          type="button"
-          value="SAIR"
-          onClick={logOff}
-          size="lg"
-          className="inputButton"
-        />
       </form>
     </Card>
   )

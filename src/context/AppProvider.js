@@ -6,6 +6,10 @@ const AppProvider = ({ children }) => {
   const [dificulty, setDificulty] = useState('facil');
   const [result, setResult] = useState('');
   const [disableButton, setDisableButton] = useState(false);
+  const [multiply, setMultiply] = useState('');
+  const [page, setPage] = useState(1);
+  const [erros, setErros] = useState(0);
+  const [acertos, setAcertos] = useState(0);
 
   return (
     <AppContext.Provider
@@ -18,6 +22,14 @@ const AppProvider = ({ children }) => {
         setResult,
         disableButton,
         setDisableButton,
+        multiply,
+        setMultiply,
+        page,
+        setPage,
+        erros,
+        setErros,
+        acertos,
+        setAcertos,
       } }
     >
       {children}

@@ -5,19 +5,22 @@ import Placar from '../Placar/Placar';
 import './RandomRespost.css';
 
 function RandomRespost(props) {
-  const [acertos, setAcertos] = useState(0);
-  const [erros, setErros] = useState(0);
-  const { alternativas, resposta } = props;
+  const { alternativas } = props;
 
   const {  
       disableButton,
       setDisableButton,
-      setResult } = useContext(AppContext);
+      setResult,
+      multiply,
+      erros,
+      setErros,
+      acertos,
+      setAcertos, } = useContext(AppContext);
 
   function handleRepost({target}) {
     setDisableButton(!disableButton);
     const { value } = target;
-    if (resposta === parseInt(value)) {
+    if (multiply === parseInt(value)) {
       setAcertos(acertos + 1)
       setResult(true);
     } else {
@@ -31,7 +34,7 @@ function RandomRespost(props) {
       <Placar one={acertos} two={erros} />
       {alternativas.map((value, index) => (
         <Button
-          variant={disableButton ? (value === resposta ? 'success' : 'danger') : 'secondary'}
+          variant={disableButton ? (value === multiply ? 'success' : 'danger') : 'secondary'}
           size="lg"
           className="buttonQuestions"
           onClick={handleRepost}
