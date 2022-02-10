@@ -14,6 +14,7 @@ function NumberGenerator() {
     multiply,
     userName,
     dificulty,
+    setDificulty,
     numberOne,
     numberTwo,
     result,
@@ -32,6 +33,8 @@ function NumberGenerator() {
 
   function logOff() {
     setMultiply('');
+    setDificulty('facil')
+    setResult('');
     history.push('/');
   }
 
@@ -49,7 +52,6 @@ function NumberGenerator() {
 }
   function nextQuestions() {
     setDisableButton(false);
-    setResult(result);
     if (dificulty === 'facil') {
       const one = getRandomInt(0, 10)
       const two = getRandomInt(0, 10)

@@ -16,7 +16,8 @@ function RandomRespost(props) {
       setNumberOne,
       setNumberTwo,
       disableButton,
-      setDisableButton } = useContext(AppContext);
+      setDisableButton,
+      setResult } = useContext(AppContext);
 
   function getRandomInt(min, max) {
     min = Math.ceil(min);
@@ -51,8 +52,10 @@ function RandomRespost(props) {
     const { value } = target;
     if (multiply === parseInt(value)) {
       setAcertos(acertos + 1)
+      setResult(true);
     } else {
       setErros(erros + 1);
+      setResult(false);
     }
   }
 
