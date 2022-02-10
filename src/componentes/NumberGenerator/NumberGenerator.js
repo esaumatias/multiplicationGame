@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import AppContext from '../../context/AppContex';
 import { Form, Card, Button } from 'react-bootstrap';
@@ -9,27 +9,23 @@ import './NumberGenerator.css';
 
 function NumberGenerator() {
   const history = useHistory();
+  const [array, setARray] = useState([]);
+  const [multiply, setMultiply] = useState('');
+  const [numberOne, setNumberOne] = useState(0);
+  const [numberTwo, setNumberTwo] = useState(0);
 
   const { 
     userName,
     dificulty,
     setDificulty,
-    numberOne,
-    numberTwo,
     result,
-    setNumberOne,
-    setNumberTwo,
-    setMultiply,
     disableButton,
     setDisableButton,
     setResult, } = useContext(AppContext);
 
-  function logOff() {
-    setMultiply('');
-    setDificulty('facil')
-    setResult('');
-    history.push('/');
-  }
+  useEffect(() => {
+    randomQuestions();
+  }, [])
 
   function getRandomInt(min, max) {
     min = Math.ceil(min);
@@ -37,28 +33,46 @@ function NumberGenerator() {
     return Math.floor(Math.random() * (max - min)) + min;
   }
 
-  function nextQuestions() {
+  function logOff() {
+    setMultiply('');
+    setDificulty('facil')
     setDisableButton(false);
     setResult('');
+    history.push('/');
+  }
+
+  function randomQuestions() {
     if (dificulty === 'facil') {
       const one = getRandomInt(0, 10)
       const two = getRandomInt(0, 10)
       setNumberOne(one);
       setNumberTwo(two);
       setMultiply(one * two);
+      const array = [getRandomInt(0, 100), getRandomInt(0, 100), getRandomInt(0, 100), (one * two)];
+      setARray(array.sort(()=> Math.random() - 0.5));
     } else if (dificulty === 'médio') {
       const one = getRandomInt(0, 50)
-      const two = getRandomInt(0, 30)
+      const two = getRandomInt(0, 50)
       setNumberOne(one);
       setNumberTwo(two);
       setMultiply(one * two);
+      const array = [getRandomInt(40, 1000), getRandomInt(40, 1000), getRandomInt(40, 1000), (one * two)];
+      setARray(array.sort(()=> Math.random() - 0.5));
     } else if (dificulty === 'dificil') {
       const one = getRandomInt(0, 100)
       const two = getRandomInt(0, 100)
       setNumberOne(one);
       setNumberTwo(two);
       setMultiply(one * two);
-    }
+      const array = [getRandomInt(24, 1300), getRandomInt(24, 1300), getRandomInt(24, 1300), (one * two)];
+      setARray(array.sort(()=> Math.random() - 0.5));
+  }
+}
+
+  function nextQuestions() {
+    setDisableButton(false);
+    setResult('');
+    randomQuestions();
   }
 
   return (
@@ -68,7 +82,7 @@ function NumberGenerator() {
       <form className="d-grid gap-2">
         <div className="containerGeral">
 
-          <RandomRespost />
+          <RandomRespost alternativas={array} resposta={multiply} />
 
           <h2 className="titleResult">{`${userName}, sua resposta está:`}</h2>
           <div className="containerResults">
