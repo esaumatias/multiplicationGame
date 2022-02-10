@@ -23,9 +23,7 @@ function NumberGenerator() {
     setDisableButton,
     setResult, } = useContext(AppContext);
 
-  useEffect(() => {
-    randomQuestions();
-  }, [])
+  useEffect(randomQuestions, [dificulty])
 
   function getRandomInt(min, max) {
     min = Math.ceil(min);
