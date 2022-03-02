@@ -4,7 +4,7 @@ _[Acesse aqui](https://multiplication-table-two.vercel.app/)_
 
 ### Contexto
 
-Neste projeto é feito um jogo de multiplicação nele é possível escolher por tres tipos de deficuldade e no final das questões e direcionado para o feedback de desenpenho. O layout da aplicação foi pensado tanto pra web quanto pra mobile.
+Neste projeto é feito um jogo de multiplicação, nele é possível escolher por tres tipos de deficuldade e no final das questões e direcionado para o feedback de desenpenho. O layout da aplicação foi pensado tanto pra web quanto pra mobile.
 
 ### Tecnologias usadas
 
