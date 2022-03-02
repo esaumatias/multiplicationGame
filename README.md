@@ -1,7 +1,19 @@
-# GAME DA MULTIPLICAÇÃO
+## GAME DA MULTIPLICAÇÃO
 
-Projeto feito com React, utilizando o Bootstrap e CSS para estilização!
+_[Acesse aqui](https://multiplication-table-two.vercel.app/)_
 
-Link: https://multiplication-table-two.vercel.app/
+### Contexto
+
+Neste projeto é feito um jogo de multiplicação, é possível escolher por tres tipos de deficuldade, no final das questões e direcionado para o feedback de desenpenho. O layout da aplicação foi pensado tanto pra web quanto pra mobile.
+
+### Tecnologias usadas
+
+>React, Hooks, JavaScript, HTML, CSS, Bootstrap
+
+### Instalação do projeto
+
+1. Clonar o link do repositório git clone git@github.com:esaumatias/multiplicationGame.git
+2. Instalar as dependência necessárias para o projeto: ```npm install```
+3. Iniciar o projeto: ```npm start```
 
 ![alt text](./src//images/tabela.png);
